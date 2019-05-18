@@ -1,3 +1,9 @@
+"""
+Chase M. Peak
+->Digital Transformation Hub
+"""
+
+
 import rds_config
 import traceback
 import pymysql
