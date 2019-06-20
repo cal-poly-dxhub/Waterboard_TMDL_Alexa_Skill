@@ -14,8 +14,8 @@ contributions to the program as a whole.
 \
 PyMySQL-0.9.3.dist-info & pymysql:\
 \
-These two directories are pulled directly from the internet, and did not \
-require further manipulation in order to function within this program. \
+These two directories are pulled directly from the PyMySQL documentation and \
+did not require further manipulation in order to function within this program. \
 Future updates to the PyMySQL library could be used in place of the present \
 version. However, inspection into the changes between versions would be of \
 use in determining whether or not alterations to the code would be necessary. \
@@ -33,7 +33,7 @@ rds\_config.py:
 \
 This file contains the constant values related to the AWS Relational Database \
 Service. Those values are then accessed within *lambda.py* in order to create \
-a PyMySQL object.
+a PyMySQL cursor object.
 \
 \
 -**Getting the code into AWS**
