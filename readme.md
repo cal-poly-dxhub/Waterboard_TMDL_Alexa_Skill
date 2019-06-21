@@ -10,7 +10,7 @@ Cal Poly Digital Transformation Hub
 The WaterboardTMDLProjects directory contains all of the necessary files in \
 order to operate the Alexa Skill for presenting information on water quality \
 projects. The following sections on specific files will explain their \
-contributions to the program as a whole.
+contributions to the program as a whole. \
 \
 PyMySQL-0.9.3.dist-info & pymysql:\
 \
@@ -40,9 +40,12 @@ rds\_config.py:
 \
 This file contains the constant values related to the AWS Relational Database \
 Service. Those values are then accessed within *lambda.py* in order to create \
-a PyMySQL cursor object.
+a PyMySQL cursor object. \
 \
+- **Getting the code into AWS**\
 \
-- **Getting the code into AWS**
-
-
+In order to get this Alexa skill functional, both the AWS Developer Center and \
+Alexa Developer Console need to be utilized from [here](https://developer.amazon.com). \
+I'll break down both of these areas to show where the given code goes, and how \
+it can be supplemented with the Alexa Developer Console. \
+...
