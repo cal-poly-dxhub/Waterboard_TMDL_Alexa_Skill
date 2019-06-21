@@ -27,7 +27,14 @@ and query the associated database. More information on PyMySQL can be found \
 \
 lambda.py:
 \
-...
+Here is where the JSON object created by the Alexa intent is processed. It \
+interacts with all of the voice-commands given by the user, and returns vocal \
+and text responses for Alexa to give. The main function is called *lambda_handler*, \
+and this is what begins the process of interpreting an intent when the lambda \
+function is invoked. Each of the customized intents for questions related to, \
+for example, counting projects, getting approval dates, or comparing dates, \
+represent their own method within the program. These individual methods are \
+activated after *lambda_handler* calls *handle_intent*.
 \
 rds\_config.py:
 \
@@ -38,4 +45,4 @@ a PyMySQL cursor object.
 \
 -**Getting the code into AWS**
 
-...
+
