@@ -45,7 +45,7 @@ a PyMySQL cursor object. \
 - **Getting the code into AWS**\
 \
 In order to get this Alexa skill functional, both the AWS Developer Center and \
-Alexa Developer Console need to be utilized from [here](https://developer.amazon.com). \
-I'll break down both of these areas to show where the given code goes, and how \
-it can be supplemented with the Alexa Developer Console. \
+Alexa Developer Console need to be utilized from [here](https://developer.amazon.com). I'll break down both \
+of these areas to show where the given code goes, and how it can be supplemented \
+by the Alexa Developer Console. \
 ...
