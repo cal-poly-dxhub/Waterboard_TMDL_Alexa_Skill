@@ -23,7 +23,7 @@ use in determining whether or not alterations to the code would be necessary. \
 This library was used in order to execute SQL statements in python through \
 a cursor object. This helped *lambda.py* to accept input values from the user \
 and query the associated database. More information on PyMySQL can be found \
-[here](https://pymysql.readthedocs.io/en/latest/).
+[here](https://pymysql.readthedocs.io/en/latest/). \
 \
 lambda.py:
 \
@@ -34,7 +34,7 @@ and this is what begins the process of interpreting an intent when the lambda \
 function is invoked. Each of the customized intents for questions related to, \
 for example, counting projects, getting approval dates, or comparing dates, \
 represent their own method within the program. These individual methods are \
-activated after *lambda_handler* calls *handle_intent*.
+activated after *lambda_handler* calls *handle_intent*. \
 \
 rds\_config.py:
 \
@@ -43,6 +43,6 @@ Service. Those values are then accessed within *lambda.py* in order to create \
 a PyMySQL cursor object.
 \
 \
--**Getting the code into AWS**
+- **Getting the code into AWS**
 
 
