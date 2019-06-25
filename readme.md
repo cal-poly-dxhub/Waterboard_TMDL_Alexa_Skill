@@ -36,7 +36,7 @@ represent their own method within the program. These individual methods are \
 activated after *lambda_handler* calls *handle_intent*. \
 \
 rds\_config.py:\
-\
+
 This file contains the constant values related to the AWS Relational Database \
 Service. Those values are then accessed within *lambda.py* in order to create \
 a PyMySQL cursor object. \
@@ -76,8 +76,8 @@ the necessary code to execute, and a connection to its corresponding front-end \
 Alexa Skill. \
 \
 The last two tasks to complete involve giving the lambda function an execution \
-role and a network to operate on. \ 
-\ 
+role and a network to operate on.\ 
+\
 - Execution Role: \
 This step involved defining an execution role to define the permissions of the \
 lambda function. [Here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) is a step-by-step tutorial from AWS Documentation for \
@@ -89,11 +89,11 @@ By choosing a VPC, you're then prompted to select subnets and security groups \
 for the lambad function. These are integral for connecting the lambda function \
 with other web services on your VPC if you require private access. More \
 information and supplementary material can be found at [1](https://docs.aws.amazon.com/lambda/latest/dg/vpc-rds.html), or [2](https://docs.aws.amazon.com/lambda/latest/dg/vpc.html). \
-\ 
+\
 Once all of these components to the program are in working condition, and the \
 database is established (not described in this readme.md), then the program \
 should offer a structure for answering user-input questions about data from a \
 database. In turn, *lambda.py* has the building blocks to create vocal and text \
-responses to those questions. \ 
+responses to those questions.\ 
 \
 For any further questions, contact Chase Peak at cpeak@calpoly.edu.
