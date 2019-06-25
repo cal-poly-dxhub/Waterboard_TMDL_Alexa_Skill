@@ -35,8 +35,8 @@ for example, counting projects, getting approval dates, or comparing dates, \
 represent their own method within the program. These individual methods are \
 activated after *lambda_handler* calls *handle_intent*. \
 \
-rds\_config.py:\
-
+rds\_config.py:
+\
 This file contains the constant values related to the AWS Relational Database \
 Service. Those values are then accessed within *lambda.py* in order to create \
 a PyMySQL cursor object. \
