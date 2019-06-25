@@ -12,8 +12,8 @@ projects. The contents are also extendable to other projects related to using \
 an Alexa skill to report on information from a database. The following sections\
 on specific files will explain their contributions to the program as a whole.\
 \
-**PyMySQL-0.9.3.dist-info & pymysql**:\
-
+**PyMySQL-0.9.3.dist-info & pymysql**:
+\
 These two directories are pulled directly from the PyMySQL documentation and\
 did not require further manipulation in order to function within this program.\
 Future updates to the PyMySQL library could be used in place of the present\
@@ -25,8 +25,8 @@ a cursor object. This helped *lambda.py* to accept input values from the user\
 and query the associated database. More information on PyMySQL can be found\
 [here](https://pymysql.readthedocs.io/en/latest/).\
 \
-**lambda.py**:\
-
+**lambda.py**:
+\
 Here is where the JSON object created by the Alexa skill is processed. It\
 interacts with the voice commands given by the user, and returns vocal and\
 text responses for Alexa to give. The main function is called *lambda_handler*,\
@@ -41,15 +41,15 @@ check out the [AWS Documentation](https://docs.aws.amazon.com/lambda/latest/dg/p
 \
 This file contains the constant values related to the AWS RDS that was used for\
 this program. Those values are then accessed within *lambda.py* in order to\
-create a PyMySQL cursor object.\
-
+create a PyMySQL cursor object.
+\
 - **Getting the code into AWS**\
 \
 In order to get this Alexa skill functional, both the AWS Developer Center and\
 Alexa Developer Portal need to be utilized from [here](https://developer.amazon.com). I'll break down both of\
 these areas to show where the given code goes, and how it can be supplemented\
-by the Alexa Developer Console.\
-
+by the Alexa Developer Console.
+\
  - Alexa Developer Console: \
 \
 Each of the individual intent-related functions in *lambda.py* appear as Intents \
