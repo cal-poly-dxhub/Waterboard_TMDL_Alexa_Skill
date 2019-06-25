@@ -1,7 +1,6 @@
 ```
 Chase Peak
 Cal Poly Digital Transformation Hub
-06-19-2019
 ```
 
 **Central Coast Water Quality Control Board TMDL Projects Alexa Skill**
@@ -47,10 +46,25 @@ a PyMySQL cursor object. \
 In order to get this Alexa skill functional, both the AWS Developer Center and \
 Alexa Developer Portal need to be utilized from [here](https://developer.amazon.com). I'll break down both \
 of these areas to show where the given code goes, and how it can be supplemented \
-by the Alexa Developer Console. \
+by the Alexa Developer Console.
+\
+\
 - Alexa Developer Console: \
 \
-...\
+Each of the individual intent-related functions in *lambda.py* appear as Intents \
+in the Alexa Skill. Here, the slots are determined based on what user inputs are \
+to be expected, and according to what values are needed for database queries. \
+For determining certain database columns to access, it may be helpful to establish \
+hard-coded values for a slot under the Slot Type drop-down menu in the *Build* \
+mode. For example, I created an *Approval Entity* Slot Type to serve the purpose \
+of determining the approval body (e.g. USEPA, Regional Board, State Board) that \
+the user identifies in their question. The values are the spoken names of each \
+approval board, the ID's were the column names within the database that held the \
+corresponding date values and the synonyms offer more ways for the user to \
+identify a specific approval body. \
+\
+For more information, you can follow the tutorial for making an Alexa Skill at \
+this [link](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/tutorials).\
 \
 - AWS Developer Center: \
 \
@@ -64,4 +78,6 @@ the necessary code to execute, and a connection to its corresponding front-end \
 Alexa Skill. \
 \
 The last two tasks to complete involve giving the lambda function an execution \
-role and a network to operate on. ...
+role and a network to operate on. \
+\
+
