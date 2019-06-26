@@ -43,59 +43,65 @@ This file contains the constant values related to the AWS RDS that was used for\
 this program. Those values are then accessed within *lambda.py* in order to\
 create a PyMySQL cursor object.
 \
-- **Getting the code into AWS**\
-\
+
+**Getting the code into AWS**\
+
 In order to get this Alexa skill functional, both the AWS Developer Center and\
 Alexa Developer Portal need to be utilized from [here](https://developer.amazon.com). I'll break down both of\
 these areas to show where the given code goes, and how it can be supplemented\
 by the Alexa Developer Console.
 \
- - Alexa Developer Console: \
+- Alexa Developer Console: \
+
+Each of the individual intent-related functions in *lambda.py* appear as Intents\
+in the Alexa Skill. Here, the slots are determined based on what user inputs are\
+to be expected, and according to what values are needed for database queries.\
 \
-Each of the individual intent-related functions in *lambda.py* appear as Intents \
-in the Alexa Skill. Here, the slots are determined based on what user inputs are \
-to be expected, and according to what values are needed for database queries. \
-For determining certain database columns to access, it may be helpful to establish \
-hard-coded values for a slot under the Slot Type drop-down menu in the *Build* \
-mode. For example, I created an *Approval Entity* Slot Type to serve the purpose \
+For determining certain database columns to access, it may be helpful to establish\
+hard-coded values for a slot under the Slot Type drop-down menu in *Build* mode.\
+For example, I created an *Approval Entity* Slot Type to serve the purpose of\
 of determining the approval body (e.g. USEPA, Regional Board, State Board) that \
-the user identifies in their question. The values are the spoken names of each \
-approval board, the ID's were the column names within the database,  and the \
-synonyms offer more ways for the user to identify a specific approval body. \
+the user identifies in their question. The values are the spoken names of each\
+approval board, the ID's were the column names within the database, and the\
+synonyms offer more ways for the user to identify a specific approval body. The\
+use of this trick can be found in the *get_approval_date* method from *lambda.py*.\
+Lines 132-134 show variables holding information stored by these hard-coded values.\
+By doing this, you can extract the column names or a specific piece of text from\
+the JSON object that you automatically receive from your Alexa skill.\
 \
-For more information, you can follow the tutorial for making an Alexa Skill at \
-this [link](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/tutorials). \ 
+For more information, you can follow the tutorial for making an Alexa Skill at\
+this [link](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/tutorials).\
 \
- - AWS Developer Center: \
+- AWS Developer Center:\
 \
-Within this portal, access the Lambda function service and create a function. \
-from there, the zip file containing the given files can be uploaded under the \
-*Function code* window on the lambda function page. Then, connect the Alexa \
-Skill to this lambda function by selecting *Alexa Skills Kit* from the triggers \
-at the top of the page, and enter the Skill ID found under *Endpoint* in the \
-Alexa Developer Portal. At this point, the lambda function is equipped with \
-the necessary code to execute, and a connection to its corresponding front-end \
-Alexa Skill. \
+Within this portal, access the Lambda function service and create a function.\
+from there, the zip file containing the given files can be uploaded under the\
+*Function code* window on the lambda function page. Then, connect the Alexa\
+Skill to this lambda function by selecting *Alexa Skills Kit* from the triggers\
+at the top of the page, and enter the Skill ID found under *Endpoint* in the\
+Alexa Developer Portal. At this point, the lambda function is equipped with\
+the necessary code to execute, and a connection to its corresponding front-end\
+Alexa Skill.
 \
 The last two tasks to complete involve giving the lambda function an execution \
-role and a network to operate on.\ 
+role and a network to operate on. 
 \
-  - Execution Role: \
-This step involved defining an execution role to define the permissions of the \
-lambda function. [Here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) is a step-by-step tutorial from AWS Documentation for \
-establishing a role. \
-
+  - Execution Role:\
+This step involved defining an execution role to define the permissions of the\
+lambda function. [Here](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) is a step-by-step tutorial from AWS Documentation for\
+establishing a role.
+\
   - Network:\
-The last step involves establishing a network for the lambda function to work on. \
-By choosing a VPC, you're then prompted to select subnets and security groups \
-for the lambad function. These are integral for connecting the lambda function \
-with other web services on your VPC if you require private access. More \
-information and supplementary material can be found at [1](https://docs.aws.amazon.com/lambda/latest/dg/vpc-rds.html), or [2](https://docs.aws.amazon.com/lambda/latest/dg/vpc.html). \
+The last step involves establishing a network for the lambda function to work on.\
+By choosing a VPC, you're then prompted to select subnets and security groups\
+for the lambad function. These are integral for connecting the lambda function\
+with other web services on your VPC if you require private access. More\
+information and supplementary material can be found at \[[1](https://docs.aws.amazon.com/lambda/latest/dg/vpc-rds.html)\] or \[[2](https://docs.aws.amazon.com/lambda/latest/dg/vpc.html)\].
 \
-Once all of these components to the program are in working condition, and the \
-database is established (not described in this readme.md), then the program \
-should offer a structure for answering user-input questions about data from a \
-database. In turn, *lambda.py* has the building blocks to create vocal and text \
-responses to those questions.\ 
+Once all of these components to the program are in working condition, and the\
+database is established (not described in this readme.md), then the program\
+should offer a structure for answering user-input questions about data from a\
+database. In turn, *lambda.py* has the building blocks to create vocal and text\
+responses to those questions.\
 \
 For any further questions, contact Chase Peak at cpeak@calpoly.edu.
