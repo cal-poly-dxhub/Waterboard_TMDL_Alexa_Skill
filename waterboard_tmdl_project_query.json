@@ -1,0 +1,392 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "waterboard projects",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "countTMDLProjects",
+                    "slots": [
+                        {
+                            "name": "source",
+                            "type": "SourceType"
+                        }
+                    ],
+                    "samples": [
+                        "How many projects identify {source} as a source of pollution",
+                        "How many projects identify {source} as a pollutant source",
+                        "How many projects have the source {source}",
+                        "What number of projects identify {source} as a source",
+                        "How many projects have {source} as a source",
+                        "How many projects identify {source} as a source"
+                    ]
+                },
+                {
+                    "name": "getApprovalDate",
+                    "slots": [
+                        {
+                            "name": "project",
+                            "type": "ProjectName"
+                        },
+                        {
+                            "name": "entity",
+                            "type": "ApprovalEntity"
+                        }
+                    ],
+                    "samples": [
+                        "what date as {project} approved by {entity}",
+                        "what date was {project} adopted by {entity}",
+                        "when was {project} adopted by {entity}",
+                        "when was {project} approved by {entity}"
+                    ]
+                },
+                {
+                    "name": "compareCompletionDate",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "comparison",
+                            "type": "Comparator",
+                            "samples": [
+                                "{comparison} {date}",
+                                "{comparison}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "how many projects have passed their time schedule {comparison} {date}",
+                        "how many projects are done {comparison} {date}",
+                        "how many projects finish {comparison} {date}",
+                        "how many projects will be finished {comparison} {date}",
+                        "how many projects will be completed {comparison} {date}",
+                        "how many projects are completed {comparison} {date}",
+                        "how many projects are finished {comparison} {date}",
+                        "How many projects have a completion date {comparison} {date}",
+                        "How many projects have a time schedule {comparison} {date}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "SourceType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Humans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "erosion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "illegal dumping"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "runoff",
+                                "synonyms": [
+                                    "runoff from unpaved roads",
+                                    "soil runoff"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "livestock",
+                                "synonyms": [
+                                    "domestic animals",
+                                    "grazing lands",
+                                    "rangeland"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "agriculture",
+                                "synonyms": [
+                                    "discharges from irrigated lands",
+                                    "cropland",
+                                    "irrigated agriculture",
+                                    "agricultural"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ProjectName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Franklin Creek Nutrients TMDL",
+                                "synonyms": [
+                                    "Franklin Creek",
+                                    "Franklin Creek Nutrients"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Dairy Creek DO TMDL",
+                                "synonyms": [
+                                    "Dairy Creek DO",
+                                    "Dairy Creek"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Chorro Creek Nutrients and DO TMDL",
+                                "synonyms": [
+                                    "Chorro Creek",
+                                    "Chorro Creek Nutrients",
+                                    "Chorro Creek Nutrients and DO"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bell Creek Nitrate TMDL",
+                                "synonyms": [
+                                    "Bell Creek",
+                                    "Bell Creek Nitrate"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ApprovalEntity",
+                    "values": [
+                        {
+                            "id": "Office_of_Administrative_Law_approval_date",
+                            "name": {
+                                "value": "Office of Administrative Law",
+                                "synonyms": [
+                                    "oal",
+                                    "office of administrative law"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "EPA_approval_date",
+                            "name": {
+                                "value": "Environmental Protection Agency",
+                                "synonyms": [
+                                    "epa",
+                                    "United States environmental protection agency",
+                                    "environmental protection agency",
+                                    "USEPA"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "State_Board_approval_date",
+                            "name": {
+                                "value": "State Board",
+                                "synonyms": [
+                                    "sb",
+                                    "state",
+                                    "state board"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "Regional_Board_adopted_date",
+                            "name": {
+                                "value": "Regional Board",
+                                "synonyms": [
+                                    "rb",
+                                    "regional board"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Comparator",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "on",
+                                "synonyms": [
+                                    "in",
+                                    "over",
+                                    "during",
+                                    "at"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "after",
+                                "synonyms": [
+                                    "later than",
+                                    "following",
+                                    "beyond"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "before",
+                                "synonyms": [
+                                    "prior",
+                                    "as of",
+                                    "by",
+                                    "coming before",
+                                    "prior to"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "countTMDLProjects",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "source",
+                            "type": "SourceType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "getApprovalDate",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "project",
+                            "type": "ProjectName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {},
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.826373825039.700825824240.780181695282"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "entity",
+                            "type": "ApprovalEntity",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {},
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.826373825039.645572671702.102847039888"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "compareCompletionDate",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "comparison",
+                            "type": "Comparator",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.807673194930.1517307837072"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1290918791000.929716066523.1046451732119"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Slot.Validation.826373825039.700825824240.780181695282",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please give a valid response for the PROJECT"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.826373825039.645572671702.102847039888",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please give a valid response for your APPROVING or ADOPTING ENTITY"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1290918791000.929716066523.1046451732119",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you interested in the number of projects BEFORE or AFTER {date}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.807673194930.1517307837072",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you interested in the number of projects BEFORE, DURING, or AFTER {date} ?"
+                    }
+                ]
+            }
+        ]
+    }
+}
